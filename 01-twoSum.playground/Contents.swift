@@ -21,7 +21,6 @@ class Solution {
     func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
         var dic = [Int: Int]()
         for (i, num) in nums.enumerated() {
-            print("\(i) \(num)")
             if let lastIndex = dic[target - num] {
                 return [lastIndex, i]
             }

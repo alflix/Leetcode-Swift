@@ -12,16 +12,30 @@
  示例 3:
  输入: 120
  输出: 21
+
+ 方法：从尾部开始弹出数字，再从头部开始推入数字。注意需要在溢出前进行检查
+
+ 复杂度分析
+ 时间复杂度：O(log(x))
+ 空间复杂度：O(1)
  */
 
 class Solution {
-    
-    func reverse(_ x: Int) -> Int {
-        return 0
+     func reverse(_ x: Int) -> Int {
+        var x = x
+        var rev = 0
+        while x != 0 {
+            let pop = x % 10
+            x /= 10
+            if rev > Int32.max / 10 || rev == Int32.max / 10 && pop > Int32.max % 10 { return 0 }
+            if rev < Int32.min / 10 || rev == Int32.min / 10 && pop < Int32.min % 10 { return 0 }
+            rev = rev * 10 + pop
+        }
+        return rev
     }
 
     func test() {
-        print(reverse(123))
+        print(reverse(1463847412))
     }
 }
 

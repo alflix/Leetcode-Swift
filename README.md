@@ -10,3 +10,5 @@
 
 ### [7.整数反转 😏](https://github.com/alflix/leetcode-swift/tree/master/07-reverseInterger)
 
+### [9.回文数 😏](https://leetcode-cn.com/problems/reverse-integer/)
+

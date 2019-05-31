@@ -14,3 +14,5 @@
 
 ### [13. 罗马数字转整数 😏](https://github.com/alflix/leetcode-swift/tree/master/13-romanToInt)
 
+### [14. 最长公共前缀 😏](https://github.com/alflix/leetcode-swift/tree/master/14-longestCommonPrefix)
+

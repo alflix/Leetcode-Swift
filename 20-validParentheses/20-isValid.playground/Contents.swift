@@ -26,8 +26,14 @@
  示例 5:
  输入: "{[]}"
  输出: true
+
+ 方法：匹配问题，我们一般使用 栈
+ 遍历字符串，我们把左括号压入栈中，当遇到右括号，和栈顶元素比较！
+
+ 时间复杂度：O(n)
+ 空间复杂度：O(n)
+
  */
-import Foundation
 
 struct Stack {
     fileprivate var array: [Character] = []
@@ -41,7 +47,7 @@ struct Stack {
     }
 
     func isEmpty() -> Bool {
-        return array.count > 0
+        return array.count == 0
     }
 }
 
@@ -52,10 +58,11 @@ class Solution {
         }
         var stack = Stack()
         let dic: [Character: Character] = ["(": ")", "[": "]", "{": "}"]
-        for character in s {
-            if character == "(" || character == "[" || character == "{" {
-                stack.push(dic[character]!)
-            } else if stack.isEmpty() || stack.pop() != character {
+        for c in s {
+            if c == "(" || c == "[" || c == "{" {
+                guard let c = dic[c] else { return false }
+                stack.push(c)
+            } else if stack.isEmpty() || stack.pop() != c {
                 return false
             }
         }

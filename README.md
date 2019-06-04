@@ -18,4 +18,6 @@
 
 #### [20. 有效的括号 😏](https://github.com/alflix/leetcode-swift/tree/master/20-validParentheses)
 
+#### [21. 合并两个有序链表 😏](https://github.com/alflix/leetcode-swift/tree/master/21-mergeTwoLists)
+
 

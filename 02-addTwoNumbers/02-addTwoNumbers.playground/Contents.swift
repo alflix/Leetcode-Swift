@@ -23,11 +23,10 @@
  */
 
 class ListNode {
+    var val: Int
+    var next: ListNode?
     
-    public var val: Int
-    public var next: ListNode?
-    
-    public init(_ val: Int) {
+    init(_ val: Int) {
         self.val = val
         self.next = nil
     }
@@ -36,15 +35,14 @@ class ListNode {
         let node = ListNode(value)
         if let nextNode = next {
             nextNode.append(value: value)
-        }else {
+        } else {
             next = node
         }
     }
 }
 
 extension ListNode: CustomStringConvertible {
-    
-    public var description: String {
+    var description: String {
         var text = "["
         var node: ListNode? = self
         while node != nil {
@@ -57,7 +55,6 @@ extension ListNode: CustomStringConvertible {
 }
 
 class Solution {
-    
     func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
         
         var l1 = l1, l2 = l2, carry = 0

@@ -20,4 +20,7 @@
 
 #### [21. 合并两个有序链表 😏](https://github.com/alflix/leetcode-swift/tree/master/21-mergeTwoLists)
 
+#### [26. 删除排序数组中的重复项 😏](https://github.com/alflix/leetcode-swift/tree/master/26-removeDuplicates)
+
+
 

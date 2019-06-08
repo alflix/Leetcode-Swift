@@ -28,14 +28,22 @@
  }
  ```
 
- 方法：
- 时间复杂度：
- 空间复杂度：
+ 方法：设置两个指针，一个慢指针i，一个快指针j，当nums[i]!=nums[j],将nums[i+1]=nums[j]。
+ 时间复杂度：O(n)
+ 空间复杂度：O(1)
 
  */
 
 class Solution {
-
+    func removeDuplicates(_ nums: inout [Int]) -> Int {
+        if nums.count == 0 { return 0 }
+        var i = 0
+        for j in nums {
+            if j != nums[i] {
+                i += 1
+                nums[i] = j
+            }
+        }
+        return i + 1
+    }
 }
-
-let solution = Solution()

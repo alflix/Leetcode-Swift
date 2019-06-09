@@ -22,5 +22,7 @@
 
 #### [26. 删除排序数组中的重复项 😏](https://github.com/alflix/leetcode-swift/tree/master/26-removeDuplicates)
 
+#### [27. 移除元素 😏](https://github.com/alflix/leetcode-swift/tree/master/27-removeElement)
+
 
 

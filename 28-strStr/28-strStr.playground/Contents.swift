@@ -16,20 +16,43 @@
  */
 
 class Solution {
-    func removeElement(_ nums: inout [Int], _ val: Int) -> Int {
-        if nums.count == 0 { return 0 }
-        var i = 0
-        for j in nums {
-            if j != val {
-                nums[i] = j
+    func strStr(_ haystack: String, _ needle: String) -> Int {
+        let hChars = Array(haystack), nChars = Array(needle)
+        let hCount = hChars.count, nCount = nChars.count
+
+        guard hCount >= nCount else { return -1 }
+        if nCount == 0 { return -1 }
+
+        var i = 0, j = 0
+        while i < hCount && j < nCount {
+            if j == -1 || hChars[i] == nChars[j] {
                 i += 1
+                j += 1
+            } else {
+
             }
         }
-        return i
+        if j == nCount {
+            return i - j
+        }
+        return -1
+    }
+
+    func next(_ needle: String) -> [Int] {
+        let nChars = Array(needle)
+        let nCount = nChars.count
+        var next: [Int] = [-1]
+        let k = -1
+        let j = 0
+        while j < nCount-1 {
+
+        }
+
+
+        return [0]
     }
 }
 
 let test = Solution()
-var i = [3,2,2,3]
-test.removeElement(&i, 2)
+test.strStr("hello", "ll")
 

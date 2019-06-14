@@ -24,5 +24,7 @@
 
 #### [27. 移除元素 😏](https://github.com/alflix/leetcode-swift/tree/master/27-removeElement)
 
+#### [28. 实现strStr() 😏](https://github.com/alflix/leetcode-swift/tree/master/28-strStr)
+
 
 

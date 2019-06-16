@@ -26,5 +26,7 @@
 
 #### [28. 实现strStr() 😏](https://github.com/alflix/leetcode-swift/tree/master/28-strStr)
 
+#### [35. 搜索插入位置 😏](https://github.com/alflix/leetcode-swift/tree/master/35-searchInsert)
+
 
 

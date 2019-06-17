@@ -28,5 +28,6 @@
 
 #### [35. 搜索插入位置 😏](https://github.com/alflix/leetcode-swift/tree/master/35-searchInsert)
 
+#### [38. 报数 😏](https://github.com/alflix/leetcode-swift/tree/master/38-countAndSay)
 
 

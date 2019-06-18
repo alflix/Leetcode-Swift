@@ -30,4 +30,6 @@
 
 #### [38. 报数 😏](https://github.com/alflix/leetcode-swift/tree/master/38-countAndSay)
 
+#### [53. 最大子序列和 😏](https://github.com/alflix/leetcode-swift/tree/master/53-maxSubArray)
+
 

@@ -32,4 +32,6 @@
 
 #### [53. 最大子序列和 😏](https://github.com/alflix/leetcode-swift/tree/master/53-maxSubArray)
 
+#### [58. 最后一个单词的长度 😏](https://github.com/alflix/leetcode-swift/tree/master/58-lengthOfLastWord)
+
 

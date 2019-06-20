@@ -34,4 +34,6 @@
 
 #### [58. 最后一个单词的长度 😏](https://github.com/alflix/leetcode-swift/tree/master/58-lengthOfLastWord)
 
+#### [66. 加一 😏](https://github.com/alflix/leetcode-swift/tree/master/66-plusOne)
+
 

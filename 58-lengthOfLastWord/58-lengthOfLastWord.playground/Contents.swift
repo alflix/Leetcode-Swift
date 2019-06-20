@@ -17,20 +17,23 @@
 
 class Solution {
     func lengthOfLastWord(_ s: String) -> Int {
-        let rs = Array(s.reversed())
+        let array = Array(s)
         var length = 0 
         var flag = false
-        for c in rs {
-            if c != " " {
+        
+        var index = array.count - 1
+        while index >= 0 {
+            if array[index] != " " {
                 length += 1
                 flag = true
             } else if flag {
                 return length
             }
-        }
+            index -= 1
+        }        
         return length
     }
 }
 
 let test = Solution()
-print(test.lengthOfLastWord("a "))
+print(test.lengthOfLastWord("hello world"))

@@ -38,4 +38,4 @@
 
 #### [67. 二进制求和 😏](https://github.com/alflix/leetcode-swift/tree/master/67-addBinary)
 
-
+#### [69. x 的平方根 😏](https://github.com/alflix/leetcode-swift/tree/master/69-mySqrt)

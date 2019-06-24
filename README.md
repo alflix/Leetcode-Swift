@@ -36,4 +36,6 @@
 
 #### [66. 加一 😏](https://github.com/alflix/leetcode-swift/tree/master/66-plusOne)
 
+#### [67. 二进制求和 😏](https://github.com/alflix/leetcode-swift/tree/master/67-addBinary)
+
 

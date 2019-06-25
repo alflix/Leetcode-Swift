@@ -38,6 +38,8 @@
 
 #### [70. 爬楼梯](https://github.com/alflix/leetcode-swift/tree/master/70-climbStairs)
 
+#### [155. 最小栈](https://github.com/alflix/leetcode-swift/tree/master/155-MinStack)
+
 ### Medium 🤔
 
 #### [02. 两数相加](https://github.com/alflix/leetcode-swift/tree/master/02-addTwoNumbers)

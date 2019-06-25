@@ -1,55 +1,79 @@
-### [70. 爬楼梯](https://leetcode-cn.com/problems/climbing-stairs/)
+### [155. 最小栈](https://leetcode-cn.com/problems/min-stack/)
 
-假设你正在爬楼梯。需要 n 阶你才能到达楼顶。
+设计一个支持 push，pop，top 操作，并能在常数时间内检索到最小元素的栈。
  
-每次你可以爬 1 或 2 个台阶。你有多少种不同的方法可以爬到楼顶呢？
+push(x) -- 将元素 x 推入栈中。
+pop() -- 删除栈顶的元素。
+top() -- 获取栈顶元素。
+getMin() -- 检索栈中的最小元素。
 
-注意：给定 n 是一个正整数。
+示例:
 
-示例 1：
-输入： 2
-输出： 2
-解释： 有两种方法可以爬到楼顶。
-1.  1 阶 + 1 阶
-2.  2 阶
+```
+MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin();   --> 返回 -3.
+minStack.pop();
+minStack.top();      --> 返回 0.
+minStack.getMin();   --> 返回 -2.
+```
 
-示例 2：
-输入： 3
-输出： 3
-解释： 有三种方法可以爬到楼顶。
-1.  1 阶 + 1 阶 + 1 阶
-2.  1 阶 + 2 阶
-3.  2 阶 + 1 阶
- 
-思路：动态规划：本问题可以分成多个子问题，爬第n阶楼梯的方法数量，等于 2 部分之和
+思路：push，pop，top 这些用数组的基本操作即可，重点在于：需要在并能在常数时间内检索到最小元素的栈
+最初的想法是通过一个 index 记录最小值的位置，并在 push 的时候更新 index。但这个想法在 pop 的时候走不通了。
+其实可以用一个辅助的栈，与主栈同步 push 和 pop，唯一不同的是，辅助栈存的是主栈每个 index 之前所有值的最小值。
+举例 主栈：[4,2,3,1] 辅助栈：[4, 2, 2, 1]）
 
-1.爬上 n-1n−1 阶楼梯的方法数量。因为再爬1阶就能到第n阶
-3.爬上 n-2n−2 阶楼梯的方法数量，因为再爬2阶就能到第n阶
-
-所以我们得到公式 dp[n] = dp[n-1] + dp[n-2]dp[n]=dp[n−1]+dp[n−2]
-
-同时需要初始化 dp[0]=1dp[0]=1 和 dp[1]=1dp[1]=1
-
-时间复杂度：O(n)
+时间复杂度：O(1)
 空间复杂度：O(1)
 
-
 ```swift
-class Solution {
-    func climbStairs(_ n: Int) -> Int {
-        var dp = Array(repeating: 0, count: n+1)
-        dp[0] = 1
-        dp[1] = 1
-        var i = 2
-        while i <= n {
-            dp[i] = dp[i-1] + dp[i-2]
-            i += 1
+class MinStack {
+    private var array: [Int]
+    private var assistArray: [Int]
+    
+    init() {
+        array = []
+        assistArray = []
+    }
+    
+    func push(_ x: Int) {        
+        if assistArray.isEmpty {
+            assistArray.append(x)
+        } else {
+            if assistArray.last! <= x {
+                assistArray.append(assistArray.last!)
+            } else {
+                assistArray.append(x)
+            }
         }
-        return dp[n]
+        array.append(x)
+    }
+    
+    func pop() {
+        if array.isEmpty { return }
+        assistArray.popLast()
+        array.popLast()
+    }
+    
+    func top() -> Int {        
+        return array.last!
+    }
+    
+    func getMin() -> Int {
+        return assistArray.last!
     }
 }
 
-let test = Solution()
-print(test.climbStairs(2))
+
+let obj = MinStack()
+obj.push(1)
+obj.push(2)
+obj.push(3)
+obj.push(4)
+obj.pop()
+let ret_3: Int = obj.top()
+let ret_4: Int = obj.getMin()
 ```
 

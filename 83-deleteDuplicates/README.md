@@ -15,7 +15,7 @@
 利用一个头结点 cur，和下一个结点判断，如果相等，则头结点的 next 等于 next.next（此时 head 的 next 已同样指向 next.next）
 如果不想等，则将 cur 移动到下一个 head 上。
 
-![IMG_6175](/Users/john/Documents/GitHub/leetcode-swift/83-deleteDuplicates/IMG_6175.JPG)
+![IMG_6175](https://github.com/alflix/leetcode-swift/tree/master/83-deleteDuplicates/IMG_6175.JPG)
 
 时间复杂度：O(n)
 空间复杂度：O(1)

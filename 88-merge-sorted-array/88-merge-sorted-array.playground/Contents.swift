@@ -1,6 +1,5 @@
-### [88. 合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/)
-
-给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。
+/**
+ 给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。
  
  说明:
  
@@ -20,9 +19,8 @@
  需要注意的是处理好 p1, p2 < 0 的情况
  时间复杂度：O(n)
  空间复杂度：O(1)
+ */
 
-
-```swift
 class Solution {
     func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {        
         guard n > 0 else { return }
@@ -51,5 +49,3 @@ var nums1 = [2, 0]
 let nums2 = [1]
 test.merge(&nums1, 1, nums2, 1)
 print(nums1)
-```
-

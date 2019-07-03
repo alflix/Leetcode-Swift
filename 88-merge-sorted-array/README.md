@@ -1,81 +1,57 @@
-### [83. 删除排序链表中的重复元素](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-list/)
+### [88. 合并两个有序数组](https://leetcode-cn.com/problems/merge-sorted-array/)
 
-给定一个排序链表，删除所有重复的元素，使得每个元素只出现一次。
+给定两个有序整数数组 nums1 和 nums2，将 nums2 合并到 nums1 中，使得 num1 成为一个有序数组。
+ 
+说明:
 
-示例 1:
+初始化 nums1 和 nums2 的元素数量分别为 m 和 n。
+你可以假设 nums1 有足够的空间（空间大小大于或等于 m + n）来保存 nums2 中的元素。
 
-输入: 1->1->2
-输出: 1->2
-示例 2:
+示例: 
+输入:
+nums1 = [1,2,3,0,0,0], m = 3
+nums2 = [2,5,6],       n = 3
 
-输入: 1->1->2->3->3
-输出: 1->2->3
+输出: [1,2,2,3,5,6]
 
-思路：解这道题，关键是要理解好链表的概念。
-利用一个头结点 cur，和下一个结点判断，如果相等，则头结点的 next 等于 next.next（此时 head 的 next 已同样指向 next.next）
-如果不想等，则将 cur 移动到下一个 head 上。
-
-![IMG_6175](https://github.com/alflix/leetcode-swift/tree/master/83-deleteDuplicates/IMG_6175.JPG)
+思路：通过2个指针，p1 和 p2，遍历数组，比较 p1 p2 所在元素的大小，小的放进数组中。所以时间复杂度：O(n+m)，空间复杂度 O(m)。
+因为需要创建一个新的数组来保存 num1 的元素。
+为了优化空间复杂度，我们可以用原来的 num1 数组，只要从后往前遍历即可（看题目，num1 有足够的空间）
+需要注意的是处理好 p1, p2 < 0 的情况
 
 时间复杂度：O(n)
 空间复杂度：O(1)
 
 
 ```swift
-class ListNode {
-    var val: Int
-    var next: ListNode?
-    
-    init(_ val: Int) {
-        self.val = val
-        self.next = nil
-    }
-    
-    func append(value: Int)  {
-        let node = ListNode(value)
-        if let nextNode = next {
-            nextNode.append(value: value)
-        } else {
-            next = node
-        }
-    }
-}
-
-extension ListNode: CustomStringConvertible {
-    var description: String {
-        var text = "["
-        var node: ListNode? = self
-        while node != nil {
-            text += "\(node!.val)"
-            node = node!.next
-            if node != nil { text += ", " }
-        }
-        return text + "]"
-    }
-}
-
 class Solution {
-    func deleteDuplicates(_ head: ListNode?) -> ListNode? {
-        guard let head = head else { return nil }
-        var cur = head
-        while cur.next != nil {
-            if cur.next!.val == cur.val {
-                cur.next = cur.next!.next
-            } else {
-                cur = cur.next!
-            }
+    func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {        
+        guard n > 0 else { return }
+        if m == 0 {
+            nums1 = nums2
+            return
         }
-        return head
+        var p1 = m - 1
+        var p2 = n - 1
+        var p = m + n - 1
+        while p1 >= 0 || p2 >= 0 {
+            if p2 < 0 || (p1 >= 0 && nums1[p1] > nums2[p2]) {
+                nums1[p] = nums1[p1]
+                p1 -= 1
+            } else {
+                nums1[p] = nums2[p2]
+                p2 -= 1
+            }
+            p -= 1
+        } 
     }
 }
 
 let test = Solution()
-let l1 = ListNode(1)
-l1.append(value: 1)
-l1.append(value: 2)
-l1.append(value: 3)
-l1.append(value: 3)
-// 3
-print(test.deleteDuplicates(l1)!)
+var nums1 = [2, 0]
+let nums2 = [1]
+test.merge(&nums1, 1, nums2, 1)
+print(nums1)
+
 ```
 

@@ -38,6 +38,12 @@
 
 #### [70. 爬楼梯](https://github.com/alflix/leetcode-swift/tree/master/70-climbStairs)
 
+#### [83. 删除排序链表中的重复元素](https://github.com/alflix/leetcode-swift/tree/master/83-deleteDuplicates)
+
+#### [88. 合并两个有序数组](https://github.com/alflix/leetcode-swift/tree/master/88-merge-sorted-array)
+
+#### [100. 相同的树](https://github.com/alflix/leetcode-swift/tree/master/100-isSameTree)
+
 #### [155. 最小栈](https://github.com/alflix/leetcode-swift/tree/master/155-MinStack)
 
 ### Medium 🤔

@@ -1,38 +1,32 @@
-### [100. 相同的树](https://leetcode-cn.com/problems/same-tree/)
+### [100. 对称二叉树](https://leetcode-cn.com/problems/symmetric-tree/)
 
-给定两个二叉树，编写一个函数来检验它们是否相同。 
- 如果两个树在结构上相同，并且节点具有相同的值，则认为它们是相同的。
+给定一个二叉树，检查它是否是镜像对称的。
  
- 示例 1: 
- 输入:
-  1         1
- / \       / \
-2   3     2   3
+例如，二叉树 [1,2,2,3,4,4,3] 是对称的。
+
+   1
+  / \
+ 2   2
+ / \ / \
+3  4 4  3
  
- [1,2,3],   [1,2,3] 
- 输出: true
+但是下面这个 [1,2,2,null,3,null,3] 则不是镜像对称的:
  
- 示例 2:
- 输入:
- 1          1
- /           \
- 2            2
+  1
+ / \
+2   2
+ \   \
+  3   3
  
- [1,2],     [1,null,2]
- 输出: false
- 
- 示例 3:
- 输入:
-  1         1
- / \       / \
- 2  1     1   2
- 
- [1,2,1],   [1,1,2]
- 输出: false
- 
- 思路：递归。检查p和q节点是否不是空，它们的值是否相等。如果所有检查都正常，则递归地为子节点执行相同操作
- 时间复杂度：O(n)
- 空间复杂度：O(log(n))
+思路：递归。
+将问题转化为：两个树在什么情况下互为镜像？
+
+如果同时满足下面的条件，两个树互为镜像： 
+它们的两个根结点具有相同的值。
+每个树的右子树都与另一个树的左子树镜像对称。
+
+时间复杂度：O(n)
+空间复杂度：O(log(n))
 
 ```swift
 public class TreeNode {
@@ -47,23 +41,28 @@ public class TreeNode {
 }
 
 class Solution {
-    func isSameTree(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
+    func isMirror(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
         if p == nil, q == nil { return true }
         guard let p = p, let q = q else { return false }
-        guard p.val == q.val else { return false }        
-        return isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
+        return p.val == q.val && isMirror(p.right, q.left) && isMirror(p.left, q.right)
+    }
+    
+    func isSymmetric(_ root: TreeNode?) -> Bool {
+        return isMirror(root, root)
     }
 }
 
 let test = Solution()
 var p = TreeNode(1)
+
 p.left = TreeNode(2)
-p.right = TreeNode(1)
+p.left?.left = TreeNode(3)
+p.left?.right = TreeNode(4)
 
-var q = TreeNode(1)
-q.left = TreeNode(1)
-q.right = TreeNode(2)
+p.right = TreeNode(2)
+p.right?.left = TreeNode(4)
+p.right?.right = TreeNode(3)
 
-print(test.isSameTree(p, q))
+print(test.isSymmetric(p))
 ```
 

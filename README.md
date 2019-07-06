@@ -44,6 +44,8 @@
 
 #### [100. 相同的树](https://github.com/alflix/leetcode-swift/tree/master/100-isSameTree)
 
+#### [101. 对称二叉树](https://github.com/alflix/leetcode-swift/tree/master/101-isSymmetric)
+
 #### [155. 最小栈](https://github.com/alflix/leetcode-swift/tree/master/155-MinStack)
 
 ### Medium 🤔

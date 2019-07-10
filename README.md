@@ -46,6 +46,10 @@
 
 #### [101. 对称二叉树](https://github.com/alflix/leetcode-swift/tree/master/101-isSymmetric)
 
+#### [104. 二叉树的最大深度](https://github.com/alflix/leetcode-swift/tree/master/104-maxDepth)
+
+#### [107. 二叉树的层次遍历 II](https://github.com/alflix/leetcode-swift/tree/master/101-levelOrderBottom)
+
 #### [155. 最小栈](https://github.com/alflix/leetcode-swift/tree/master/155-MinStack)
 
 ### Medium 🤔

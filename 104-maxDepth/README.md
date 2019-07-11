@@ -12,8 +12,8 @@
   3
  / \
 9  20
-  /  \
- 15   7
+    /  \
+  15   7
 返回它的最大深度 3 。
 
 思路：递归。(和二叉树相关的问题大部分可以用递归解决)
@@ -43,9 +43,7 @@ public class TreeNode {
 
 class Solution {            
     func maxDepth(_ root: TreeNode?) -> Int {
-        if root == nil {
-            return 0
-        }
+        if root == nil { return 0 }
         let left = maxDepth(root?.left)
         let right = maxDepth(root?.right)
         return max(left, right) + 1

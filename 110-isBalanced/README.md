@@ -27,17 +27,10 @@
      3   3
     / \
     4  4
-   2   2
-  / \
- 3   3
-/ \
-4  4
-
 返回 false 。
 
 
-思路：递归。和 [104. 二叉树的最大深度](https://github.com/alflix/leetcode-swift/tree/master/104-maxDepth)
-相似。在求深度的过程中，增加判断是否深度差大于1即可
+思路：递归。和 [104. 二叉树的最大深度](https://github.com/alflix/leetcode-swift/tree/master/104-maxDepth) 相似。在求深度的过程中，增加判断是否深度差大于1即可
 
 时间复杂度：O(n)
 空间复杂度：O(log(n))

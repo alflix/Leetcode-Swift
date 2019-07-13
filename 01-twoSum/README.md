@@ -9,12 +9,16 @@
 ```
 
 思路：由于是要找下标，所以想到的第一个思路就是通过哈希表来实现，value 就是我们要找的 index，所以 key 就只剩下 num
+
 var dic = [num: value]
+
 我们剩下的目标是，在 dic.keys 中找到其中相加为 target 的两个 num，所以我们遍历 keys，
 想象我们第一个要找的数是 target - num，如果在 dic 存在 value 的话，代表其被找到了， value 就是我们要找的 index
+
 最后，再进一步优化就是，在最开始组装 dic 的时候就开始查找，不需要多余的遍历 keys
 
 时间复杂度: O(n)
+
 空间复杂度: O(n)
 
 ```swift
@@ -36,4 +40,3 @@ let solution = Solution()
 print(solution.twoSum([2, 7, 11, 15], 9))
 ```
 
-### 

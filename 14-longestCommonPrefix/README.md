@@ -21,9 +21,6 @@
 
 方法：
 
-
- 复杂度分析
-
  时间复杂度：o(s) s 是所有字符串中字符数量的总和
 
  空间复杂度：o(1)
@@ -76,6 +73,5 @@ class Solution {
 
 let solution = Solution()
 solution.test()
-
 ```
 

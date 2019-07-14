@@ -1,6 +1,7 @@
 ### [26. 删除排序数组中的重复项](https://leetcode-cn.com/problems/remove-duplicates-from-sorted-array/)
 
-```
+#### 题目
+
 给定一个排序数组，你需要在原地删除重复出现的元素，使得每个元素只出现一次，返回移除后数组的新长度。
 不要使用额外的数组空间，你必须在原地修改输入数组并在使用 O(1) 额外空间的条件下完成。
 
@@ -28,13 +29,18 @@ int len = removeDuplicates(nums);
 for (int i = 0; i < len; i++) {
     print(nums[i]);
 }
-```
 
-  方法：设置两个指针，一个慢指针i，一个快指针j，当nums[i]!=nums[j],将nums[i+1]=nums[j]。
+#### 思路
 
- 时间复杂度：O(n)
+设置两个指针，一个慢指针i，一个快指针j，当nums[i]!=nums[j],将nums[i+1]=nums[j]。
+
+#### 复杂度
+
+时间复杂度：O(n)
  
- 空间复杂度：O(1)
+空间复杂度：O(1)
+
+#### 解法
 
 ```swift
 class Solution {
@@ -51,4 +57,3 @@ class Solution {
     }
 }
 ```
-

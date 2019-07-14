@@ -1,7 +1,8 @@
 ### [02: 两数相加](https://leetcode-cn.com/problems/add-two-numbers/ )
 
-```
-题目：给出两个非空的链表用来表示两个非负的整数。其中，它们各自的位数是按照逆序的方式存储的，并且它们的每个节点只能存储一位数字。
+#### 题目
+
+给出两个非空的链表用来表示两个非负的整数。其中，它们各自的位数是按照逆序的方式存储的，并且它们的每个节点只能存储一位数字。
 如果，我们将这两个数相加起来，则会返回一个新的链表来表示它们的和。
 您可以假设除了数字 0 之外，这两个数都不会以 0 开头。
 
@@ -9,9 +10,10 @@
 输入：(2 -> 4 -> 3) + (5 -> 6 -> 4)
 输出：7 -> 0 -> 8
 原因：342 + 465 = 807
-```
 
-思路：用程序来模拟两数字相加的数学过程。首先，数字相加，所以要用一个 carry 表示两个相同位数数字相加后的数字，再对其除 10 进行取余运算，得到结果即为该位数的数字。
+#### 思路
+
+用程序来模拟两数字相加的数学过程。首先，数字相加，所以要用一个 carry 表示两个相同位数数字相加后的数字，再对其除 10 进行取余运算，得到结果即为该位数的数字。
 
 除后结果，作为进位数字赋值到下一位的操作初始值。以此类推。
 
@@ -21,9 +23,13 @@
 
 最后再使用 dummy->next 表示真正的头节点。
 
+#### 复杂度
+
 时间复杂度：O(max(m,n))，假设 m 和 n 分别表示 l1 和 l2 的长度，上面的算法最多重复 max(m,n) 次。
 
 空间复杂度：O(max(m,n))， 新列表的长度最多为 max(m,n)+1。
+
+#### 解法
 
 ```swift
 class ListNode {    
@@ -33,7 +39,7 @@ class ListNode {
         self.val = val
         self.next = nil
     }
-    
+
     func append(value: Int)  {
         let node = ListNode(value)
         if let nextNode = next {
@@ -58,8 +64,7 @@ extension ListNode: CustomStringConvertible {
 }
 
 class Solution {    
-    func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
-        
+    func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {        
         var l1 = l1, l2 = l2, carry = 0
         let dummy = ListNode(0)
         var newNode = dummy

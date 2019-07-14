@@ -1,5 +1,7 @@
 ### [110. 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)
 
+#### 题目
+
 给定一个二叉树，判断它是否是高度平衡的二叉树。 
 本题中，一棵高度平衡二叉树定义为： 
 一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过1。
@@ -29,13 +31,19 @@
     4  4
 返回 false 。
 
-思路：递归。和 [104. 二叉树的最大深度](https://github.com/alflix/leetcode-swift/tree/master/104-maxDepth) 相似。
+#### 思路
+
+递归。和 [104. 二叉树的最大深度](https://github.com/alflix/leetcode-swift/tree/master/104-maxDepth) 相似。
 
 在求深度的过程中，增加判断是否深度差大于1即可
+
+#### 复杂度
 
 时间复杂度：O(n)
 
 空间复杂度：O(log(n))
+
+#### 解法
 
 ```swift
 import Foundation

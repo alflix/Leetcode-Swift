@@ -54,6 +54,8 @@
 
 #### [110. 平衡二叉树](https://github.com/alflix/leetcode-swift/tree/master/110-isBalanced)
 
+#### [111. 二叉树的最小深度](https://github.com/alflix/leetcode-swift/tree/master/111-minDepth)
+
 #### [155. 最小栈](https://github.com/alflix/leetcode-swift/tree/master/155-MinStack)
 
 ### Medium 🤔

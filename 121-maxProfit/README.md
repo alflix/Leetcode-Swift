@@ -26,11 +26,37 @@
 
 #### 思路
 
+将数组绘制成折线图，答案可以转换为，找到最小的谷和之后的最大的峰。
+
+因此，遍历数组，找到最小的值。遍历过程中，找到最大的差值
+
 #### 复杂度
+
+时间复杂度：O(n)
+
+空间复杂度：O(1)
 
 #### 解法
 
 ```swift
+class Solution {            
+    func maxProfit(_ prices: [Int]) -> Int {
+        var minprice = Int.max
+        var maxProfix = 0
+        var index = 0
+        while index < prices.count {
+            if prices[index] < minprice {
+                minprice = prices[index]
+            } else if prices[index] - minprice > maxProfix {
+                maxProfix = prices[index] - minprice
+            }
+            index += 1
+        }        
+        return maxProfix
+    }
+}
 
+let test = Solution()
+print(test.maxProfit([7,1,5,3,6,4]))
 ```
 

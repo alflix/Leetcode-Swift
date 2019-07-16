@@ -56,6 +56,8 @@
 
 #### [111. 二叉树的最小深度](https://github.com/alflix/leetcode-swift/tree/master/111-minDepth)
 
+#### [121. 买卖股票的最佳时机](https://github.com/alflix/leetcode-swift/tree/master/121-maxProfit)
+
 #### [155. 最小栈](https://github.com/alflix/leetcode-swift/tree/master/155-MinStack)
 
 ### Medium 🤔

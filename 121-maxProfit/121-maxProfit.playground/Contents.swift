@@ -17,18 +17,29 @@
  输出: 0
  解释: 在这种情况下, 没有交易完成, 所以最大利润为 0。
   
-思路：
+思路：将数组绘制成折线图，答案可以转换为，找到最小的谷和之后的最大的峰。
+因此，遍历数组，找到最小的值。遍历过程中，找到最大的差值
   
-时间复杂度：O()
-空间复杂度：O()
+时间复杂度：O(n)
+空间复杂度：O(1)
  */
 
 class Solution {            
     func maxProfit(_ prices: [Int]) -> Int {
-        return 0
+        var minprice = Int.max
+        var maxProfix = 0
+        var index = 0
+        while index < prices.count {
+            if prices[index] < minprice {
+                minprice = prices[index]
+            } else if prices[index] - minprice > maxProfix {
+                maxProfix = prices[index] - minprice
+            }
+            index += 1
+        }        
+        return maxProfix
     }
 }
 
 let test = Solution()
-
-
+print(test.maxProfit([7,1,5,3,6,4]))

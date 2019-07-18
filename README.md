@@ -58,6 +58,8 @@
 
 #### [121. 买卖股票的最佳时机](https://github.com/alflix/leetcode-swift/tree/master/121-maxProfit)
 
+#### [136. 只出现一次的数字](https://github.com/alflix/leetcode-swift/tree/master/136-singleNumber)
+
 #### [155. 最小栈](https://github.com/alflix/leetcode-swift/tree/master/155-MinStack)
 
 ### Medium 🤔

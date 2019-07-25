@@ -16,11 +16,10 @@
  
 返回 true, 因为存在目标和为 22 的根节点到叶子节点的路径 5->4->11->2。
  
- 思路：递归。和 [104. 二叉树的最大深度](https://github.com/alflix/leetcode-swift/tree/master/104-maxDepth)
- 相似。在求深度的过程中，增加判断是否深度差大于1即可
+思路：递归。终止条件为左右节点为空且sum-root!.val == 0
   
- 时间复杂度：O(n)
- 空间复杂度：O(log(n))
+时间复杂度：O(n)
+空间复杂度：O(log(n))
  */
 
 import Foundation

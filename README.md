@@ -56,6 +56,8 @@
 
 #### [111. 二叉树的最小深度](https://github.com/alflix/leetcode-swift/tree/master/111-minDepth)
 
+#### [112. 路径总和](https://github.com/alflix/leetcode-swift/tree/master/112-path-sum)
+
 #### [118. 杨辉三角](https://github.com/alflix/leetcode-swift/tree/master/118-pascals-triangle)
 
 #### [121. 买卖股票的最佳时机](https://github.com/alflix/leetcode-swift/tree/master/121-maxProfit)

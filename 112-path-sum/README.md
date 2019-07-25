@@ -1,41 +1,29 @@
-### [110. 平衡二叉树](https://leetcode-cn.com/problems/balanced-binary-tree/)
+### [112. 路径总和](https://leetcode-cn.com/problems/path-sum/)
 
 #### 题目
 
-给定一个二叉树，判断它是否是高度平衡的二叉树。 
-本题中，一棵高度平衡二叉树定义为： 
-一个二叉树每个节点 的左右两个子树的高度差的绝对值不超过1。
+给定一个二叉树和一个目标和，判断该树中是否存在根节点到叶子节点的路径，这条路径上所有节点值相加等于目标和。
 
-示例 1: 
-给定二叉树 [3,9,20,null,null,15,7]
+说明: 叶子节点是指没有子节点的节点。
 
-```
-  3
- / \
- 9  20
-   /  \
-  15   7
-```
+示例: 
+给定如下二叉树，以及目标和 sum = 22，
 
-返回 true 。
-
-示例 2: 
-给定二叉树 [1,2,2,3,3,null,null,4,4]
-
-         1
-        / \
-       2   2
-      / \
-     3   3
+``` 
+     5
     / \
-    4  4
-返回 false 。
+   4   8
+  /   / \
+ 11  13  4
+ / \      \
+7   2      1
+``` 
+
+返回 true, 因为存在目标和为 22 的根节点到叶子节点的路径 5->4->11->2。
 
 #### 思路
 
-递归。和 [104. 二叉树的最大深度](https://github.com/alflix/leetcode-swift/tree/master/104-maxDepth) 相似。
-
-在求深度的过程中，增加判断是否深度差大于1即可
+递归。终止条件为左右节点为空且sum-root!.val == 0
 
 #### 复杂度
 
@@ -60,40 +48,25 @@ public class TreeNode {
 }
 
 class Solution {  
-    var isBalanced = true
-    
-    @discardableResult
-    func maxDepth(_ root: TreeNode?) -> Int {
-        if root == nil { return 0 }
-        let left = maxDepth(root?.left)
-        let right = maxDepth(root?.right)
-        if abs(left - right) > 1 { isBalanced = false }
-        return max(left, right) + 1
-    }
-    
-    func isBalanced(_ root: TreeNode?) -> Bool {
-        if root == nil { return true }
-        maxDepth(root)
-        return isBalanced
-    }
+    func hasPathSum(_ root: TreeNode?, _ sum: Int) -> Bool {
+        if root == nil { return false }
+        if root?.left == nil && root?.right == nil {  return sum-root!.val == 0 }                
+        return hasPathSum(root?.left, sum-root!.val) || hasPathSum(root?.right, sum-root!.val)
+    }        
 }
 
 let test = Solution()
-var p = TreeNode(0)
-p.left = TreeNode(9)
-p.right = TreeNode(20)
-p.right?.left = TreeNode(15)
-p.right?.right = TreeNode(7)
+var p = TreeNode(5)
+p.left = TreeNode(4)
+p.left?.left = TreeNode(11)
+p.left?.left?.left = TreeNode(7)
+p.left?.left?.right = TreeNode(2)
 
-var q = TreeNode(1)
-q.left = TreeNode(2)
-q.right = TreeNode(2)
-q.left?.left = TreeNode(3)
-q.left?.right = TreeNode(3)
-q.left?.left?.left = TreeNode(4)
-q.left?.left?.right = TreeNode(4)
+p.right = TreeNode(8)
+p.right?.left = TreeNode(13)
+p.right?.right = TreeNode(4)
+p.right?.right?.right = TreeNode(1)
 
-print(test.isBalanced(p))
-print(test.isBalanced(q))
+print(test.hasPathSum(p, 22))
 ```
 

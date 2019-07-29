@@ -11,37 +11,40 @@
  输入: "race a car"
  输出: false
 
- 方法：匹配问题，我们一般使用 栈
- 遍历字符串，我们把左括号压入栈中，当遇到右括号，和栈顶元素比较！
+ 方法：双指针，while 循环，判断～
 
  时间复杂度：O(n)
- 空间复杂度：O(n)
+ 空间复杂度：O(1)
 
  */
 
-import Foundation
-
-extension String {
-    subscript (i: Int) -> Character {
-        return self[index(startIndex, offsetBy: i)]
+extension Character {
+    var isLetterOrDigit: Bool {
+        return isLetter || isNumber
     }
+}
 
 class Solution {
     func isPalindrome(_ s: String) -> Bool {
         if s.count == 0 { return true }
-        let lowerS = s.lowercased()
+        let lowerS = Array(s.lowercased())
         var i = 0
         var j = lowerS.count - 1
         while i < j {
-            while i < j && lowerS[i]. {
-                <#code#>
+            while i < j && !lowerS[i].isLetterOrDigit {
+                i += 1
             }
-            if lowerS[i] != lowerS[j] { return false }
-        }
-        
-        return false
+            while i < j && !lowerS[j].isLetterOrDigit {
+                j -= 1
+            }
+            if lowerS[i] != lowerS[j] { 
+                return false                 
+            }
+            i += 1
+            j -= 1
+        }        
+        return true
     }
-
 
     func test() {
         print(isPalindrome("A man, a plan, a canal: Panama"))

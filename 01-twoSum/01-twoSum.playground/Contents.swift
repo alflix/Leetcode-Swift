@@ -16,8 +16,7 @@
  时间复杂度: O(n), 空间复杂度: O(n)
  */
 
-class Solution {
-    
+class Solution {    
     func twoSum(_ nums: [Int], _ target: Int) -> [Int] {
         var dic = [Int: Int]()
         for (i, num) in nums.enumerated() {

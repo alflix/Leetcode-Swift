@@ -33,23 +33,26 @@ AB -> 28
 
 #### 复杂度
 
-时间复杂度：O(1)
+时间复杂度：O(n)
 空间复杂度：O(1)
 
 #### 解法
 
 ```swift
 class Solution {
-    func majorityElement(_ nums: [Int]) -> Int {
-        var candidate: Int? = nil
-        var count = 0
-        for num in nums {
-            if count == 0 {
-                candidate = num
-            }
-            count += (num == candidate) ? 1 : -1
-        }
-        return candidate ?? 0
+    func titleToNumber(_ s: String) -> Int {
+        var res = 0
+        let scalarsOfA = "A".unicodeScalars        
+        for char in Array(s) {
+            let count = countBetween(char: char, scalarsOfA: scalarsOfA)
+            res = res * 26 + count
+        }        
+        return res
+    }
+    
+    func countBetween(char: Character, scalarsOfA: String.UnicodeScalarView) -> Int {
+        let scalars = String(char).unicodeScalars
+        return Int(scalars[scalars.startIndex].value - scalarsOfA[scalarsOfA.startIndex].value) + 1
     }
 }
 ```

@@ -76,6 +76,10 @@
 
 #### [171. Excel表列序号](https://github.com/alflix/leetcode-swift/tree/master/171-excel-sheet-column-number)
 
+#### [172. 阶乘后的零](https://github.com/alflix/leetcode-swift/tree/master/172-factorial-trailing-zeroes)
+
+#### [225. 用队列实现栈](https://github.com/alflix/leetcode-swift/tree/master/225-MyStack)
+
 ### Medium 🤔
 
 #### [02. 两数相加](https://github.com/alflix/leetcode-swift/tree/master/02-addTwoNumbers)

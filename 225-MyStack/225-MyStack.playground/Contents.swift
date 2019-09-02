@@ -11,7 +11,9 @@ empty() -- 返回栈是否为空
 你所使用的语言也许不支持队列。 你可以使用 list 或者 deque（双端队列）来模拟一个队列 , 只要是标准的队列操作即可。
 你可以假设所有操作都是有效的（例如, 对一个空的栈不会调用 pop 或者 top 操作）。
 
-思路：队列的实现参考：https://github.com/raywenderlich/swift-algorithm-club/tree/master/Queue
+思路：
+
+队列的实现参考：https://github.com/raywenderlich/swift-algorithm-club/tree/master/Queue
 队列：FIFO（先进先出） 栈：LIFO(后进先出)
 所以要先通过队列实现栈，肯定要有一个 pop 或者 push 的操作是 O(n), 另外一个是 0(1) (栈的「后进先出」也可以看成「先进后出」)。
 我们可以让 push 操作是 0(1)，即 push 等于 队列的 enqueue，而 pop 的时候，需要维护另外一个 queue，让之前的 queue ，依次 dequeue 进去元素，直至最后一个，就是要 pop 的元素。

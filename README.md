@@ -68,9 +68,13 @@
 
 #### [136. 只出现一次的数字](https://github.com/alflix/leetcode-swift/tree/master/136-singleNumber)
 
+#### [141. 环形链表](https://github.com/alflix/leetcode-swift/tree/master/141-hasCycle)
+
 #### [155. 最小栈](https://github.com/alflix/leetcode-swift/tree/master/155-MinStack)
 
-#### [169. 求众数](https://github.com/alflix/leetcode-swift/tree/master/155-MinStack)
+#### [169. 求众数](https://github.com/alflix/leetcode-swift/tree/master/169-majority-element)
+
+#### [171. Excel表列序号](https://github.com/alflix/leetcode-swift/tree/master/171-excel-sheet-column-number)
 
 ### Medium 🤔
 

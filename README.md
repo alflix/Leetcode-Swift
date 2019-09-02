@@ -70,6 +70,8 @@
 
 #### [155. 最小栈](https://github.com/alflix/leetcode-swift/tree/master/155-MinStack)
 
+#### [169. 求众数](https://github.com/alflix/leetcode-swift/tree/master/155-MinStack)
+
 ### Medium 🤔
 
 #### [02. 两数相加](https://github.com/alflix/leetcode-swift/tree/master/02-addTwoNumbers)

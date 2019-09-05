@@ -26,25 +26,34 @@
  
 思路：10进制转26进制
  
+正常情况下我们每次取余数拼接后逆序一下即可
+
+但由于我们多加了一个'#'字符，26 的返回结果是 A#, 52 的返回结果是 B#
+
+来看 26 这个结果 'A#' 本质上是等价于 'Z' 的，
+
+因此对于 count % 26 == 0 的情况，可以直接 + 'Z'，之后还需要 count = count/26 - 1，否则 26 的返回结果是 AZ
+  
 时间复杂度：O(n)
 空间复杂度：O(1)
  */
 
 import Foundation
 
-class Solution {
-    func titleToNumber(_ s: String) -> Int {
-        var res = 0
-        let scalarsOfA = "A".unicodeScalars        
-        for char in Array(s) {
-            let count = countBetween(char: char, scalarsOfA: scalarsOfA)
-            res = res * 26 + count
+class Solution {    
+    func convertToTitle(_ n: Int) -> String {
+        let array = Array("#ABCDEFGHIJKLMNOPQRSTUVWXYZ")
+        var count = n
+        var res = ""
+        while count > 0 {
+            if count % 26 == 0 {
+                res.append("Z")
+                count = count/26 - 1
+            } else {
+                res.append(array[count%26])
+                count /= 26
+            }            
         }        
-        return res
-    }
-    
-    func countBetween(char: Character, scalarsOfA: String.UnicodeScalarView) -> Int {
-        let scalars = String(char).unicodeScalars
-        return Int(scalars[scalars.startIndex].value - scalarsOfA[scalarsOfA.startIndex].value) + 1
+        return String(res.reversed())
     }
 }

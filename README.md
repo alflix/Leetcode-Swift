@@ -78,6 +78,8 @@
 
 #### [172. 阶乘后的零](https://github.com/alflix/leetcode-swift/tree/master/172-factorial-trailing-zeroes)
 
+#### [189. 旋转数组](https://github.com/alflix/leetcode-swift/tree/master/189-rotate-array)
+
 #### [225. 用队列实现栈](https://github.com/alflix/leetcode-swift/tree/master/225-MyStack)
 
 ### Medium 🤔

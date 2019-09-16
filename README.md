@@ -80,6 +80,8 @@
 
 #### [189. 旋转数组](https://github.com/alflix/leetcode-swift/tree/master/189-rotate-array)
 
+#### [198. 动态规划](https://github.com/alflix/leetcode-swift/tree/master/198-house-robber)
+
 #### [225. 用队列实现栈](https://github.com/alflix/leetcode-swift/tree/master/225-MyStack)
 
 ### Medium 🤔

@@ -61,9 +61,9 @@ class Solution {
     }
 
     func test() {
-        print(longestCommonPrefix(["flower","flow","flight"] ))
-        print(longestCommonPrefix(["dog","racecar","car"]))
-        print(longestCommonPrefix(["c","acc","ccc"]))
+        print(longestCommonPrefix(["flower", "flow", "flight"] ))
+        print(longestCommonPrefix(["dog", "racecar", "car"]))
+        print(longestCommonPrefix(["c", "acc", "ccc"]))
     }
 }
 

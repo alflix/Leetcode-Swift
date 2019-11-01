@@ -39,7 +39,7 @@
  
  */
 
-class Solution {    
+class Solution {
     func findMedianSortedArrays(_ nums1: [Int], _ nums2: [Int]) -> Double {
         let m = nums1.count
         let n = nums2.count
@@ -47,7 +47,7 @@ class Solution {
         let right = (m + n + 2) / 2
         return Double(findKth(nums1, 0, nums2, 0, left) + findKth(nums1, 0, nums2, 0, right)) / 2.0
     }
-    
+
     /// 在两个有序数组中找到第K个元素
     ///
     /// - Parameters:
@@ -70,16 +70,16 @@ class Solution {
         }
         let midVal1 = (first1 + index/2 - 1 < nums1.count) ? nums1[first1 + index/2 - 1] : Int.max
         let midVal2 = (first2 + index/2 - 1 < nums2.count) ? nums2[first2 + index/2 - 1] : Int.max
-        
+
         if midVal1 < midVal2 {
             print("抛弃 midVal1 小的数字 \(midVal1), \(midVal2)")
             return findKth(nums1, first1 + index/2, nums2, first2, index - index/2)
-        }else{
+        } else {
             print("抛弃 midVal2 小的数字 \(midVal1), \(midVal2)")
             return findKth(nums1, first1, nums2, first2 + index/2, index - index/2)
         }
     }
-    
+
     func test() {
         print(findMedianSortedArrays([2, 3], [1, 5, 8]))
     }

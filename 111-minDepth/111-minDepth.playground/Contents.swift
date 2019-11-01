@@ -44,18 +44,18 @@ public class TreeNode {
     }
 }
 
-class Solution {            
+class Solution {
     func minDepth(_ root: TreeNode?) -> Int {
         if root == nil { return 0 }
         if root?.left == nil && root?.right == nil { return 1 }
-        var a = Int.max        
+        var a = Int.max
         if let left = root?.left {
             a = min(a, minDepth(left))
         }
         if let right = root?.right {
             a = min(a, minDepth(right))
         }
-        return a + 1                
+        return a + 1
     }
 }
 
@@ -67,5 +67,3 @@ p.right?.left = TreeNode(15)
 p.right?.right = TreeNode(7)
 
 print(test.minDepth(p))
-
-

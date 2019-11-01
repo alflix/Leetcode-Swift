@@ -40,7 +40,7 @@ public class TreeNode {
     }
 }
 
-class Solution {            
+class Solution {
     func maxDepth(_ root: TreeNode?) -> Int {
         if root == nil { return 0 }
         let left = maxDepth(root?.left)
@@ -57,5 +57,3 @@ p.right?.left = TreeNode(15)
 p.right?.right = TreeNode(7)
 
 print(test.maxDepth(p))
-
-

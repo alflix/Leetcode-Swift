@@ -38,13 +38,13 @@
  */
 
 class Solution {
-    
+
     func lengthOfLongestSubstring(_ s: String) -> Int {
-        
+
         var dic = [Character: Int]()
         var longest = 0
         var left = 0
-        
+
         for (index, char) in s.enumerated() {
             if let tmp = dic[char], tmp >= left {
                 left = tmp + 1
@@ -54,7 +54,7 @@ class Solution {
         }
         return longest
     }
-    
+
     func test() {
         print("\(lengthOfLongestSubstring("abcabcbb"))")
         print("\(lengthOfLongestSubstring("bbbbb"))")

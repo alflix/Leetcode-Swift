@@ -25,13 +25,13 @@
 class ListNode {
     var val: Int
     var next: ListNode?
-    
+
     init(_ val: Int) {
         self.val = val
         self.next = nil
     }
-    
-    func append(value: Int)  {
+
+    func append(value: Int) {
         let node = ListNode(value)
         if let nextNode = next {
             nextNode.append(value: value)
@@ -56,11 +56,11 @@ extension ListNode: CustomStringConvertible {
 
 class Solution {
     func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
-        
+
         var l1 = l1, l2 = l2, carry = 0
         let dummy = ListNode(0)
         var newNode = dummy
-        
+
         while l1 != nil || l2 != nil || carry != 0 {
             if let node = l1 {
                 carry += node.val
@@ -76,25 +76,25 @@ class Solution {
         }
         return dummy
     }
-    
+
     func test() {
         let l1 = ListNode(2)
         l1.append(value: 4)
         l1.append(value: 3)
-        
+
         let l2 = ListNode(5)
         l2.append(value: 6)
         l2.append(value: 4)
-        
+
         if let l3 = addTwoNumbers(l1, l2) {
             print(l3)
         }
     }
-    
+
     func test2() {
         let l1 = ListNode(5)
         let l2 = ListNode(5)
-        
+
         if let l3 = addTwoNumbers(l1, l2) {
             print(l3)
         }

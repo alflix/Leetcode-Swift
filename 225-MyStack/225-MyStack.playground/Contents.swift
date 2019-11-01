@@ -23,34 +23,34 @@ empty() -- 返回栈是否为空
 public struct Queue<T> {
     fileprivate var array = [T?]()
     fileprivate var head = 0
-    
+
     public var isEmpty: Bool {
         return count == 0
     }
-    
+
     public var count: Int {
         return array.count - head
     }
-    
+
     public mutating func enqueue(_ element: T) {
         array.append(element)
     }
-    
+
     public mutating func dequeue() -> T? {
         guard head < array.count, let element = array[head] else { return nil }
-        
+
         array[head] = nil
         head += 1
-        
+
         let percentage = Double(head)/Double(array.count)
         if array.count > 50 && percentage > 0.25 {
             array.removeFirst(head)
             head = 0
         }
-        
+
         return element
     }
-    
+
     public var front: T? {
         if isEmpty {
             return nil
@@ -64,18 +64,18 @@ class MyStack {
     /** Initialize your data structure here. */
     private var queue1 = Queue<Int>()
     var quene1Top: Int?
-    
+
     init() {}
-    
+
     /** Push element x onto stack. */
     func push(_ x: Int) {
         queue1.enqueue(x)
         quene1Top = x
     }
-    
+
     /** Removes the element on top of the stack and returns that element. */
     func pop() -> Int {
-        var queue2 = Queue<Int>() 
+        var queue2 = Queue<Int>()
         while queue1.count > 1 {
             quene1Top = queue1.dequeue()
             queue2.enqueue(quene1Top!)
@@ -84,12 +84,12 @@ class MyStack {
         queue1 = queue2
         return pop!
     }
-    
+
     /** Get the top element. */
     func top() -> Int {
         return quene1Top!
     }
-    
+
     /** Returns whether the stack is empty. */
     func empty() -> Bool {
         return queue1.isEmpty

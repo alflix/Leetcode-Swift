@@ -39,13 +39,13 @@ public class TreeNode {
     }
 }
 
-class Solution {                    
+class Solution {
     func levelOrderBottom(_ root: TreeNode?) -> [[Int]] {
         var list: [[Int]] = []
         levelOrderBottom(list: &list, root: root, depth: 0)
         return list
     }
-    
+
     func levelOrderBottom(list: inout [[Int]], root: TreeNode?, depth: Int) {
         guard let root = root else { return }
         if list.count == depth {
@@ -73,4 +73,3 @@ q.left?.right = TreeNode(4)
 q.right = TreeNode(5)
 
 print(test.levelOrderBottom(q))
-

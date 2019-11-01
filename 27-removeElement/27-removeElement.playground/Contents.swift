@@ -34,6 +34,5 @@ class Solution {
 }
 
 let test = Solution()
-var i = [3,2,2,3]
+var i = [3, 2, 2, 3]
 test.removeElement(&i, 2)
-

@@ -33,12 +33,12 @@ public class TreeNode {
     }
 }
 
-class Solution {   
+class Solution {
     func sortedArrayToBST(_ nums: [Int]) -> TreeNode? {
         guard nums.count > 0 else { return nil }
         return sortedArrayToBST(nums: nums, first: 0, last: nums.count - 1)
     }
-    
+
     func sortedArrayToBST(nums: [Int], first: Int, last: Int) -> TreeNode? {
         if first > last { return nil }
         let mid = first + (last - first)/2
@@ -50,6 +50,5 @@ class Solution {
 }
 
 let test = Solution()
-var p = [-10,-3,0,5,9]
+var p = [-10, -3, 0, 5, 9]
 print(test.sortedArrayToBST(p)!)
-

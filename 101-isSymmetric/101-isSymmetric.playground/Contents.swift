@@ -45,7 +45,7 @@ class Solution {
         guard let p = p, let q = q else { return false }
         return p.val == q.val && isMirror(p.right, q.left) && isMirror(p.left, q.right)
     }
-    
+
     func isSymmetric(_ root: TreeNode?) -> Bool {
         return isMirror(root, root)
     }
@@ -63,5 +63,3 @@ p.right?.left = TreeNode(4)
 p.right?.right = TreeNode(3)
 
 print(test.isSymmetric(p))
-
-

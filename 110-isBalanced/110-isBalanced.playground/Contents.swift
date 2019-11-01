@@ -47,9 +47,9 @@ public class TreeNode {
     }
 }
 
-class Solution {  
+class Solution {
     var isBalanced = true
-    
+
     @discardableResult
     func maxDepth(_ root: TreeNode?) -> Int {
         if root == nil { return 0 }
@@ -58,7 +58,7 @@ class Solution {
         if abs(left - right) > 1 { isBalanced = false }
         return max(left, right) + 1
     }
-    
+
     func isBalanced(_ root: TreeNode?) -> Bool {
         if root == nil { return true }
         maxDepth(root)

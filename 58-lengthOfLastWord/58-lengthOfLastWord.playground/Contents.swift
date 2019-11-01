@@ -18,9 +18,9 @@
 class Solution {
     func lengthOfLastWord(_ s: String) -> Int {
         let array = Array(s)
-        var length = 0 
+        var length = 0
         var flag = false
-        
+
         var index = array.count - 1
         while index >= 0 {
             if array[index] != " " {
@@ -30,7 +30,7 @@ class Solution {
                 return length
             }
             index -= 1
-        }        
+        }
         return length
     }
 }

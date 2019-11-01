@@ -9,13 +9,13 @@ extension String {
     subscript (i: Int) -> Character {
         return self[index(startIndex, offsetBy: i)]
     }
-    
+
     subscript(_ range: CountableRange<Int>) -> String {
         let idx1 = index(startIndex, offsetBy: max(0, range.lowerBound))
         let idx2 = index(startIndex, offsetBy: min(self.count, range.upperBound))
         return String(self[idx1..<idx2])
     }
-    
+
     func index(of find: String) -> Int? {
         return range(of: find)?.lowerBound.encodedOffset
     }
@@ -25,13 +25,13 @@ extension String {
 class ListNode {
     var val: Int
     var next: ListNode?
-    
+
     init(_ val: Int) {
         self.val = val
         self.next = nil
     }
-    
-    func append(value: Int)  {
+
+    func append(value: Int) {
         let node = ListNode(value)
         if let nextNode = next {
             nextNode.append(value: value)
@@ -53,7 +53,6 @@ extension ListNode: CustomStringConvertible {
         return text + "]"
     }
 }
-
 
 /// TreeNode
 public class TreeNode {

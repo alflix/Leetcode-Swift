@@ -38,7 +38,7 @@ class ListNode {
         self.next = nil
     }
 
-    func append(value: Int)  {
+    func append(value: Int) {
         let node = ListNode(value)
         if let nextNode = next {
             nextNode.append(value: value)
@@ -61,16 +61,16 @@ extension ListNode: CustomStringConvertible {
     }
 }
 
-class Solution {    
+class Solution {
     func hasCycle(_ head: ListNode?) -> Bool {
         if (head == nil || head?.next == nil) {
-            return false          
+            return false
         }
         var slow = head
         var fast = head?.next
         while(slow?.val != fast?.val) {
             if (fast ==  nil || fast.next == nil) {
-                return false        
+                return false
             }
             slow = slow?.next
             fast = fast.next.next

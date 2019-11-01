@@ -40,7 +40,7 @@
 
 import Foundation
 
-class Solution {    
+class Solution {
     func convertToTitle(_ n: Int) -> String {
         let array = Array("#ABCDEFGHIJKLMNOPQRSTUVWXYZ")
         var count = n
@@ -52,8 +52,8 @@ class Solution {
             } else {
                 res.append(array[count%26])
                 count /= 26
-            }            
-        }        
+            }
+        }
         return String(res.reversed())
     }
 }

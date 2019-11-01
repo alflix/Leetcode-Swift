@@ -33,7 +33,7 @@ class ListNode {
         self.next = nil
     }
 
-    func append(value: Int)  {
+    func append(value: Int) {
         let node = ListNode(value)
         if let nextNode = next {
             nextNode.append(value: value)

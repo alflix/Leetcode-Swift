@@ -48,7 +48,7 @@ class Solution {
                 i += 1
                 count += 1
             }
-            result += "\(count)" + String(value) 
+            result += "\(count)" + String(value)
             index = i
         }
         return result
@@ -56,4 +56,4 @@ class Solution {
 }
 
 let test = Solution()
-print(test.countAndSay(5)) 
+print(test.countAndSay(5))

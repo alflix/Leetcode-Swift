@@ -27,7 +27,7 @@
 
 import Foundation
 
-class Solution {    
+class Solution {
     func twoSum(_ numbers: [Int], _ target: Int) -> [Int] {
         var index1 = 0
         var index2 = numbers.count - 1
@@ -37,7 +37,7 @@ class Solution {
                 return [index1+1, index2+1]
             } else if sum < target {
                 index1 += 1
-            } else{
+            } else {
                 index2 -= 1
             }
         }

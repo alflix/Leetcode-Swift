@@ -32,4 +32,4 @@ class Solution {
 }
 
 let test = Solution()
-print(test.maxSubArray([-2, 3, -1, 1, -3])) 
+print(test.maxSubArray([-2, 3, -1, 1, -3]))

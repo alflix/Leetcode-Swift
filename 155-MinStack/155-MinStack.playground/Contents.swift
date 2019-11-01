@@ -28,13 +28,13 @@
 class MinStack {
     private var array: [Int]
     private var assistArray: [Int]
-    
+
     init() {
         array = []
         assistArray = []
     }
-    
-    func push(_ x: Int) {        
+
+    func push(_ x: Int) {
         if assistArray.isEmpty {
             assistArray.append(x)
         } else {
@@ -46,22 +46,21 @@ class MinStack {
         }
         array.append(x)
     }
-    
+
     func pop() {
         if array.isEmpty { return }
         assistArray.popLast()
         array.popLast()
     }
-    
-    func top() -> Int {        
+
+    func top() -> Int {
         return array.last!
     }
-    
+
     func getMin() -> Int {
         return assistArray.last!
     }
 }
-
 
 let obj = MinStack()
 obj.push(1)

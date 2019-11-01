@@ -28,7 +28,7 @@
 空间复杂度：O(n2)
  */
 
-class Solution {            
+class Solution {
     func generate(_ numRows: Int) -> [[Int]] {
         var triangle: [[Int]] = []
         guard numRows > 0 else { return triangle }
@@ -38,10 +38,10 @@ class Solution {
             var row: [Int] = [1]
             let previousRow = triangle[num - 1]
             if previousRow.count > 1 {
-                for i in 1...previousRow.count - 1 {                
+                for i in 1...previousRow.count - 1 {
                     row.append(previousRow[i-1] + previousRow[i])
                 }
-            }                         
+            }
             row.append(1)
             triangle.append(row)
         }
@@ -51,5 +51,3 @@ class Solution {
 
 let test = Solution()
 print(test.generate(1))
-
-

@@ -35,12 +35,12 @@ public class TreeNode {
     }
 }
 
-class Solution {  
+class Solution {
     func hasPathSum(_ root: TreeNode?, _ sum: Int) -> Bool {
         if root == nil { return false }
-        if root?.left == nil && root?.right == nil {  return sum-root!.val == 0 }                
+        if root?.left == nil && root?.right == nil {  return sum-root!.val == 0 }
         return hasPathSum(root?.left, sum-root!.val) || hasPathSum(root?.right, sum-root!.val)
-    }        
+    }
 }
 
 let test = Solution()

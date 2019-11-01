@@ -24,7 +24,7 @@ a^b^a = (a^a)^b = 0^b
 空间复杂度：O(1)
  */
 
-class Solution {            
+class Solution {
     func singleNumber(_ nums: [Int]) -> Int {
         var first = nums.first!
         guard nums.count > 1 else {
@@ -40,4 +40,4 @@ class Solution {
 }
 
 let test = Solution()
-print(test.singleNumber([2,1,2,3,3]))
+print(test.singleNumber([2, 1, 2, 3, 3]))

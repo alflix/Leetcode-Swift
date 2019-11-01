@@ -24,7 +24,7 @@
 空间复杂度：O(1)
  */
 
-class Solution {            
+class Solution {
     func maxProfit(_ prices: [Int]) -> Int {
         var minprice = Int.max
         var maxProfix = 0
@@ -36,10 +36,10 @@ class Solution {
                 maxProfix = prices[index] - minprice
             }
             index += 1
-        }        
+        }
         return maxProfix
     }
 }
 
 let test = Solution()
-print(test.maxProfit([7,1,5,3,6,4]))
+print(test.maxProfit([7, 1, 5, 3, 6, 4]))

@@ -37,7 +37,7 @@ class Solution {
         while num >= 5 {
             res += num/5
             num /= 5
-        }        
+        }
         return res
     }
 }

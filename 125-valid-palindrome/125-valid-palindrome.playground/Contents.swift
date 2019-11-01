@@ -37,12 +37,12 @@ class Solution {
             while i < j && !lowerS[j].isLetterOrDigit {
                 j -= 1
             }
-            if lowerS[i] != lowerS[j] { 
-                return false                 
+            if lowerS[i] != lowerS[j] {
+                return false
             }
             i += 1
             j -= 1
-        }        
+        }
         return true
     }
 

@@ -49,7 +49,7 @@ class Solution {
     func isSameTree(_ p: TreeNode?, _ q: TreeNode?) -> Bool {
         if p == nil, q == nil { return true }
         guard let p = p, let q = q else { return false }
-        guard p.val == q.val else { return false }        
+        guard p.val == q.val else { return false }
         return isSameTree(p.left, q.left) && isSameTree(p.right, q.right)
     }
 }
@@ -64,5 +64,3 @@ q.left = TreeNode(1)
 q.right = TreeNode(2)
 
 print(test.isSameTree(p, q))
-
-

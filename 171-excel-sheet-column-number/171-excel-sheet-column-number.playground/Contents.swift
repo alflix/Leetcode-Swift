@@ -35,14 +35,14 @@ import Foundation
 class Solution {
     func titleToNumber(_ s: String) -> Int {
         var res = 0
-        let scalarsOfA = "A".unicodeScalars        
+        let scalarsOfA = "A".unicodeScalars
         for char in Array(s) {
             let count = countBetween(char: char, scalarsOfA: scalarsOfA)
             res = res * 26 + count
-        }        
+        }
         return res
     }
-    
+
     func countBetween(char: Character, scalarsOfA: String.UnicodeScalarView) -> Int {
         let scalars = String(char).unicodeScalars
         return Int(scalars[scalars.startIndex].value - scalarsOfA[scalarsOfA.startIndex].value) + 1

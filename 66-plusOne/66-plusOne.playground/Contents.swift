@@ -39,4 +39,4 @@ class Solution {
 }
 
 let test = Solution()
-print(test.plusOne([1,3,4,5]))
+print(test.plusOne([1, 3, 4, 5]))

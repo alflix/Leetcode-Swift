@@ -22,7 +22,7 @@
  */
 
 class Solution {
-    func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {        
+    func merge(_ nums1: inout [Int], _ m: Int, _ nums2: [Int], _ n: Int) {
         guard n > 0 else { return }
         if m == 0 {
             nums1 = nums2
@@ -40,7 +40,7 @@ class Solution {
                 p2 -= 1
             }
             p -= 1
-        } 
+        }
     }
 }
 

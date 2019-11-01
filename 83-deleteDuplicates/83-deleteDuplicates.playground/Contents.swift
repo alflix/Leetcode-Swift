@@ -21,13 +21,13 @@
 class ListNode {
     var val: Int
     var next: ListNode?
-    
+
     init(_ val: Int) {
         self.val = val
         self.next = nil
     }
-    
-    func append(value: Int)  {
+
+    func append(value: Int) {
         let node = ListNode(value)
         if let nextNode = next {
             nextNode.append(value: value)

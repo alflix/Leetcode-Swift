@@ -43,4 +43,4 @@ class Solution {
     }
 }
 
-Solution().rob([2,7,9,3,1])
+Solution().rob([2, 7, 9, 3, 1])

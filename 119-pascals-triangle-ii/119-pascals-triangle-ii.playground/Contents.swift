@@ -25,7 +25,7 @@
 空间复杂度：O(nlogn)
  */
 
-class Solution {            
+class Solution {
     func getRow(_ rowIndex: Int) -> [Int] {
         var triangle = Array(repeating: 1, count: rowIndex+1)
         guard rowIndex > 0 else { return triangle }
@@ -36,7 +36,7 @@ class Solution {
             while j >= 1 {
                 triangle[j] += triangle[j-1]
                 j -= 1
-            }                                     
+            }
         }
         return triangle
     }
@@ -44,5 +44,3 @@ class Solution {
 
 let test = Solution()
 print(test.getRow(4))
-
-

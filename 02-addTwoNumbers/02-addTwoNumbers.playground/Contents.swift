@@ -28,7 +28,6 @@ class ListNode {
 
     init(_ val: Int) {
         self.val = val
-        self.next = nil
     }
 
     func append(value: Int) {
@@ -56,7 +55,6 @@ extension ListNode: CustomStringConvertible {
 
 class Solution {
     func addTwoNumbers(_ l1: ListNode?, _ l2: ListNode?) -> ListNode? {
-
         var l1 = l1, l2 = l2, carry = 0
         let dummy = ListNode(0)
         var newNode = dummy

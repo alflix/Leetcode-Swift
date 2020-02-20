@@ -9,7 +9,7 @@
 
  注意：在字符串中，每个单词由单个空格分隔，并且字符串中不会有任何额外的空格。
 
- 思路：遍历字符串转换出来的数组，用栈 push，遇到空格 pop 依次拼接到字符串中
+ 思路：遍历字符串转换出来的数组，用栈 push，遇到空格 pop 依次拼接到新的字符串中
 
  时间复杂度: O(n)
  空间复杂度: O(n)
@@ -27,7 +27,11 @@ class Solution {
                 while !stack.isEmpty {
                     result.append(stack.popLast() ?? " ")
                 }
+                result.append(" ")
             }
+        }
+        while !stack.isEmpty {
+            result.append(stack.popLast() ?? " ")
         }
         return result
     }
@@ -35,4 +39,3 @@ class Solution {
 
 let solution = Solution()
 let result = solution.reverseWords("Let's take LeetCode contest")
-

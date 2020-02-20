@@ -1,7 +1,3 @@
-/**
-
- */
-
 import Foundation
 
 // MARK: - String extension
@@ -18,6 +14,23 @@ extension String {
 
     func index(of find: String) -> Int? {
         return range(of: find)?.lowerBound.encodedOffset
+    }
+}
+
+/// Stack
+struct Stack {
+    fileprivate var array: [Character] = []
+
+    mutating func push(_ element: Character) {
+        array.append(element)
+    }
+
+    mutating func pop() -> Character? {
+        return array.popLast()
+    }
+
+    func isEmpty() -> Bool {
+        return array.count == 0
     }
 }
 

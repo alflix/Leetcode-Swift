@@ -38,9 +38,7 @@
  */
 
 class Solution {
-
     func lengthOfLongestSubstring(_ s: String) -> Int {
-
         var dic = [Character: Int]()
         var longest = 0
         var left = 0

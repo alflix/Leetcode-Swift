@@ -48,11 +48,13 @@ extension ListNode: CustomStringConvertible {
 
 class Solution {
     func reverseList(_ head: ListNode?) -> ListNode? {
+        // 初始2个指针
         var pre: ListNode? = nil
         var cur = head
         while cur != nil {
             let tmp = cur?.next
             cur?.next = pre
+            //往右前进这2个指针
             pre = cur
             cur = tmp
         }
